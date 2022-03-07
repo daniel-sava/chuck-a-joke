@@ -1,0 +1,31 @@
+<section *ngIf="category" class="jokes" aria-labelledby="jokes__title">
+    <div class="container">
+        <div class="jokes__header">
+            <h1 class="jokes__header-title">{{ category }} Jokes</h1>
+            <a class="jokes__header-shuffle" (click)="getJokes()">
+                <img src="assets/images/icons/refresh.svg">
+                Shuffle
+            </a>
+        </div>
+        <div class="jokes__cards">
+            <div *ngFor="let joke of jokes">
+                <div class="jokes__card">
+                    <div class="jokes__card-wrapper">
+                        <div class="jokes__card-wrapper-overlay">
+                            <p class="jokes__card-wrapper-overlay-title">Hover Me</p>
+                        </div>
+                        <img class="jokes__card-image" [src]="'assets/images/cards/chuck-norris-' + layout + '.jpg'" />
+                    </div>
+                    <div class="jokes__card-overlay">
+                        <div class="jokes__card-overlay-header">
+                            <svg class="jokes__card-header-decoration" xmlns="http://www.w3.org/2000/svg">
+                                <path />
+                            </svg>
+                        </div>
+                        <p class="jokes__card-overlay-text">{{ joke.value }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

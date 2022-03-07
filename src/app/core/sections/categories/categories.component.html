@@ -1,0 +1,21 @@
+<section *ngIf="categories" class="categories" aria-labelledby="categories__title">
+    <div class="container">
+        <div class="categories__header">
+            <h1 class="categories__header-title">Choose a Category</h1>
+            <a class="categories__header-shuffle" (click)="refreshCategories()">
+                <img src="assets/images/icons/refresh.svg">
+                Shuffle
+            </a>
+        </div>
+        <div class="categories__wrapper">
+            <div *ngFor="let category of categoriesDisplayed; let i = index" class="categories__category">
+                <div class="categories__category-overlay">
+                    <h2 class="categories__category-overlay-title">{{ category.categoryName }}</h2>
+                    <a [routerLink]="['/category', category.categoryName]" [queryParams]="{'layout': i}"
+                        class="categories__category-overlay-link">View Jokes</a>
+                </div>
+                <img class="categories__category-image" [src]="'assets/images/cards/chuck-norris-' + i + '.jpg'">
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,18 @@
+.footer {
+    background-color: var(--dark);
+    padding: 1.5rem 0;
+    text-align: center;
+
+    position: relative;
+    z-index: 100;
+
+    &__copyright {
+        color: var(--light);
+        font-weight: bold;
+
+        &-year {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+    }
+}

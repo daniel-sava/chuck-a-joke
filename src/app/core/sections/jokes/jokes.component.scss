@@ -1,0 +1,145 @@
+.jokes {
+  position: relative;
+  text-align: center;
+  margin-top: 5rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-title {
+      color: var(--primary);
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    &-shuffle {
+      display: flex;
+      gap: .5rem;
+      width: fit-content;
+      background-color: var(--dark);
+      border-radius: .5rem;
+      padding: .5rem 1rem;
+      margin-top: .5rem;
+      color: var(--secondary);
+      font-weight: bold;
+      box-shadow: var(--shadow);
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 4rem 0rem;
+    padding: 0;
+  }
+
+  &__card {
+    position: relative;
+    display: block;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+
+    &-wrapper {
+      &-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#1E2531, 0.8);
+        border-radius: .5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-title {
+          color: var(--secondary);
+          font-weight: bold;
+          font-size: 2rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &-image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      border-radius: 1rem;
+      background-color: var(--light);
+      transform: translateY(100%);
+      transition: .2s ease-in-out;
+
+      &-text {
+        padding: 2rem;
+        margin: 0;
+        color: var(--dark);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        overflow-x: hidden;
+        background-color: var(--light);
+        overflow-y: auto;
+      }
+    }
+
+    &-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 1rem 0 0 0;
+      background-color: var(--light);
+      transition: .2s ease-in-out;
+
+      &-decoration {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        bottom: 100%;
+        right: 0;
+        z-index: 1;
+
+        path {
+          fill: var(--light);
+          d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+        }
+      }
+    }
+
+    &:hover {
+      .jokes__card-wrapper-overlay-title {
+        opacity: 0;
+        transition: all .3s;
+      }
+
+      .jokes__card-overlay {
+        transform: translateY(0);
+
+        .jokes__card-overlay-header {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}

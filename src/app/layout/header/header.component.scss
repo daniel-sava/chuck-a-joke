@@ -1,0 +1,14 @@
+.header {
+    background-color: var(--dark);
+    padding: 1.5rem 0;
+    text-align: center;
+
+    position: relative;
+    z-index: 100;
+
+    &__logo {
+        width: 100%;
+        max-width: 12rem;
+        height: auto;
+    }
+}

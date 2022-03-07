@@ -1,0 +1,109 @@
+.categories {
+    position: relative;
+    text-align: center;
+    margin-top: 5rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        &-title {
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        &-shuffle {
+            display: flex;
+            gap: .5rem;
+            width: fit-content;
+            background-color: var(--dark);
+            border-radius: .5rem;
+            padding: .5rem 1rem;
+            margin-top: .5rem;
+            color: var(--secondary);
+            font-weight: bold;
+            box-shadow: var(--shadow);
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__category {
+        position: relative;
+        font-size: 1.5rem;
+        font-weight: 400;
+        width: fit-content;
+        margin-top: 2rem;
+        width: 280px;
+        height: 360px;
+        box-shadow: var(--shadow);
+
+        &:nth-child(2) {
+            width: 320px;
+            height: 400px;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+
+            &:nth-child(2) {
+                width: 100%;
+            }
+        }
+
+        &-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#1E2531, 0.8);
+            border-radius: .5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &-title {
+                color: var(--secondary);
+                font-weight: bold;
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+
+            &-link {
+                color: var(--light);
+                font-weight: 300;
+                font-size: 1.5rem;
+                text-decoration: none;
+
+                &:hover {
+                    cursor: pointer;
+                    color: var(--primary-light);
+                }
+            }
+        }
+
+        &-image {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: .5rem;
+        }
+    }
+}

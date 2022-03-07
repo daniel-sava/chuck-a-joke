@@ -1,0 +1,7 @@
+<section *ngIf="quote" class="container" aria-label="Quote">
+    <div class="quote">
+        <p class="quote__text"><span class="quote__text-copy">" </span>{{ quote.quoteValue }}<span
+                class="quote__text-copy"> " - Chuck Norris</span></p>
+        <img class="quote__image" [src]="'assets/images/decorations/chuck-norris-' + image + '.png'">
+    </div>
+</section>

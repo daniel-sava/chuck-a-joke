@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+    production: true,
+    jokesApi: 'https://api.chucknorris.io/jokes'
 };

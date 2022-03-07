@@ -1,0 +1,27 @@
+<section *ngIf="history" class="history" aria-labelledby="history__title">
+    <div class="container">
+        <div class="history__header">
+            <h1 class="history__header-title">
+                Jokes you Viewed in {{ category.charAt(0).toUpperCase() + category.substring(1) }}
+            </h1>
+            <a class="history__header-clear" (click)="clearHistory()">
+                <img src="assets/images/icons/clear.svg">
+                Clear History
+            </a>
+        </div>
+        <div class="history__jokes">
+            <div *ngFor="let joke of history" class="history__jokes__joke">
+                <div class="history__jokes__joke-detail">
+                    <img class="history__jokes__joke-detail-badge"
+                        src="assets/images/decorations/chuck-norris-approved.jpg">
+                    <p class="history__jokes__joke-detail-category">{{ this.category }}</p>
+                </div>
+                <p class="history__jokes__joke-message">
+                    <span class="history__jokes__joke-message-quote">" </span>
+                    {{ joke.value }}
+                    <span class="history__jokes__joke-message-quote"> "</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

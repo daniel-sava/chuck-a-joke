@@ -1,0 +1,40 @@
+.quote {
+    background-color: var(--light);
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    margin: 4rem 0 2rem 0;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        width: calc(100% - 200px);
+
+        @media screen and (max-width: 576px) {
+          & {
+            width: 100%;
+          }
+        }
+
+        &-copy {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+    }
+
+    &__image {
+        width: 200px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        @media screen and (max-width: 576px) {
+          & {
+            display: none;
+          }
+        }
+    }
+}

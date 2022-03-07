@@ -1,0 +1,9 @@
+<section *ngIf="joke" class="hero" aria-labelledby="hero__title">
+    <img class="hero__decoration-left" src="assets/images/decorations/chuck-norris-3.png">
+    <img class="hero__decoration-right" src="assets/images/decorations/chuck-norris-3.png">
+
+    <div class="container">
+        <h1 class="hero__title">Joke of the Day</h1>
+        <p class="hero__joke">{{ joke.value }}</p>
+    </div>
+</section>
